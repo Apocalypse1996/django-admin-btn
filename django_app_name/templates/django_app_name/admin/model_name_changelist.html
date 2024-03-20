@@ -1,0 +1,14 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools-items %}
+    <li>
+        <form method="POST" action="url_name/" id="some_id">
+            {% csrf_token %}
+            <a href="#" type="submit"
+               onclick="event.preventDefault(); document.getElementById('some_id').submit()">
+                Кнопка
+            </a>
+        </form>
+    </li>
+    {{ block.super }}
+{% endblock %}
